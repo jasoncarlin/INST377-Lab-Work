@@ -10,7 +10,7 @@
 let slidePosition = 0;
 
 // gather a reference to every slide we're using via the class name and querySelectorAll
-let slides = document.querySelectorAll('.carousel_item');
+const slides = document.querySelectorAll('.carousel_item');
 
 // change that "NodeList" into a Javascript "array", to get access to "array methods"
 const slidesArray = Array.from(slides);
@@ -38,7 +38,7 @@ function moveToNextSlide() {
 
 function moveToPrevSlide() {
   if(slidePosition === totalSlides[0]){
-    slidePosition = totalSlides[3];
+    slidePosition = 3;
   } else {
     slidePosition -= 1;
   }
