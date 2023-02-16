@@ -36,8 +36,8 @@ function moveToNextSlide() {
   updateSlidePosition(); // this is how you call a function within a function
 }
 function moveToPrevSlide() {
-  if(slidePosition === totalSlides - 1){
-    slidePosition = 3;
+  if(slidePosition === totalSlides[0]){
+    slidePosition = totalSlides[3];
   } else {
     slidePosition -= 1;
   }
