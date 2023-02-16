@@ -10,7 +10,7 @@
 let slidePosition = 0;
 
 // gather a reference to every slide we're using via the class name and querySelectorAll
-const slides = document.querySelectorAll('.carousel_item');
+let slides = document.querySelectorAll('.carousel_item');
 
 // change that "NodeList" into a Javascript "array", to get access to "array methods"
 const slidesArray = Array.from(slides);
