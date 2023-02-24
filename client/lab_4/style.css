@@ -140,7 +140,8 @@ form {
   margin: 1rem;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  display: flex;
+  flex-flow: column;
 }
 
 /*
