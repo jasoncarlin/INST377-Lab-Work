@@ -302,11 +302,8 @@ form label {
     /* check it out by using your developer tools to shrink your screen-size */
     .container {
       background-color: rgba(7, 153, 119, 0.65);
-      margin: 0 20px;
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      flex:1;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 }
