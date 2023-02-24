@@ -306,4 +306,14 @@ form label {
       align-items: center;
       justify-content: center;
     }
+
+    .box {
+      border: 2px dashed;
+      border-radius: 4px;
+
+      width: fit-content;
+      height:fit-content;
+      padding: 1.5rem;
+      margin: 0 auto;
+    }
 }
