@@ -43,6 +43,7 @@ h2, h3 {
   margin:0;
   padding:0;
   padding-bottom:1.5rem;
+  color: #ffffff;
 }
 
 form {
@@ -300,7 +301,7 @@ form label {
     /* Rules in here will only apply when a screen is the correct size */
     /* check it out by using your developer tools to shrink your screen-size */
     .container {
-      background-color: rgba(221, 255, 247, 0.65);
+      background-color: rgba(8, 153, 119, 0.65);
       margin: 0 20px;
       display: flex;
       justify-content: center;
