@@ -159,7 +159,7 @@ form {
 }
 
 .footer a {
-  color: rgba(255, 224, 138, 1);
+  color: rgb(139, 105, 9);
   text-decoration: underline;
 }
 
@@ -172,12 +172,12 @@ form {
   /* Hue, saturation, luminosity, alpha */
   background-color: hsla(0, 0%, 90%, 0.15);
   /* red, green, blue, alpha */
-  color: rgb(246, 169, 93);
+  color: rgb(150, 3, 40);
   text-decoration: none;
 }
 
 .subtitle {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(131, 37, 9, 0.8);
   margin: 0px;
   margin-bottom: 5px;
 }
@@ -254,7 +254,7 @@ div.carousel {
   height: 45px;
   padding: 10px;
   line-height: 0; /* This centers a button's text! */
-  border: 2px solid rgb(99,99,99); /* shorthand for how to do a border */
+  border: 2px solid rgb(80, 5, 124); /* shorthand for how to do a border */
 }
 
 .prev:focus,
@@ -300,7 +300,7 @@ form label {
     /* Rules in here will only apply when a screen is the correct size */
     /* check it out by using your developer tools to shrink your screen-size */
     .container {
-      background-color: rgba(204, 8, 162, 0.65);
+      background-color: rgba(7, 105, 29, 0.65);
       margin: 0 20px;
       display: flex;
       justify-content: center;
