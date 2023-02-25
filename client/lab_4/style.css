@@ -310,7 +310,7 @@ form label {
     .box {
       border: 2px solid;
       border-radius: 4px;
-      width: 100%;
+      width: 90%;
       height: fit-content;
       padding: 1.5rem;
       margin: 10px auto;
@@ -320,8 +320,8 @@ form label {
       background-color: rgba(107, 15, 26, 0.8);
       flex: 1 2 auto;
       margin: 1rem;
-      align-items: center;
-      justify-content: left;
+      align-items: flex-start;
+      justify-content: flex-start;
       display: flex;
       flex-flow: column;
     }
