@@ -308,12 +308,21 @@ form label {
     }
 
     .box {
-      border: 2px dashed;
+      border: 2px solid;
       border-radius: 4px;
-
-      width: fit-content;
-      height:fit-content;
+      width: 100%;
+      height: fit-content;
       padding: 1.5rem;
-      margin: 0 auto;
+      margin: 10px auto;
+    }
+
+    .right_section {
+      background-color: rgba(107, 15, 26, 0.8);
+      flex: 1 2 auto;
+      margin: 1rem;
+      align-items: center;
+      justify-content: left;
+      display: flex;
+      flex-flow: column;
     }
 }
