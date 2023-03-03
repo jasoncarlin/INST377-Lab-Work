@@ -5,6 +5,11 @@
 
 /* A quick filter that will return something based on a matching input */
 function filterList(list, query) {
+  return list.filter((item) => {
+    const lowerCaseName = item.name.toLowerCase();
+    const lowerCaseQuery = query.toLowerCase();
+    return lowerCaseName.includes(lowerCaseQuery);
+  })
   /*
     Using the .filter array method, 
     return a list that is filtered by comparing the item name in lower case
