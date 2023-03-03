@@ -16,7 +16,7 @@ function filterList(list, query) {
 
 async function mainEvent() { // the async keyword means we can make API requests
   const mainForm = document.querySelector('.main_form'); // This class name needs to be set on your form before you can listen for an event on it
-  // Add a querySelector that targets your filter button here
+  const filterButton = document.querySelector('.filter_button'); // Add a querySelector that targets your filter button here
 
   let currentList = []; // this is "scoped" to the main event function
   
@@ -54,7 +54,15 @@ async function mainEvent() { // the async keyword means we can make API requests
     console.table(currentList); 
   });
 
+  filterButton.addEventListener('click', (event) => {
+    console.log('clicked filterbutton')
 
+    const formData = new FormData(mainForm);
+    const formProps = Object.fromEntries(formData);
+
+    console.log(formProps);  
+    const newList = filterList(currentList, formProps.resto)
+  })
   /*
     Now that you HAVE a list loaded, write an event listener set to your filter button
     it should use the 'new FormData(target-form)' method to read the contents of your main form
@@ -66,6 +74,7 @@ async function mainEvent() { // the async keyword means we can make API requests
     Fire it here and filter for the word "pizza"
     you should get approximately 46 results
   */
+
 }
 
 /*
