@@ -27,14 +27,15 @@ function filterList(list, query) {
     return lowerCaseName.includes(lowerCaseQuery);
   })
 
-  function cutRestaruantList(list) {
-    console.log('fired cut list');
-    const range = [...Array(15).keys()];
-    return newArray = range.map((item) => {
-      const index = getRandomIntInclusive(0, list.length - 1);
-      return list[index]
-    })
-  }
+
+}
+function cutRestaurantList(list) {
+  console.log('fired cut list');
+  const range = [...Array(15).keys()];
+  return newArray = range.map((item) => {
+    const index = getRandomIntInclusive(0, list.length - 1);
+    return list[index]
+  })
   /*
     Using the .filter array method, 
     return a list that is filtered by comparing the item name in lower case
@@ -102,7 +103,7 @@ async function mainEvent() { // the async keyword means we can make API requests
 
   generateListButton.addEventListener('click', (event) => {
     console.log('generate new list');
-    const restarauntsList = cutRestaruantList(currentList);
+    const restarauntsList = cutRestaurantList(currentList);
     console.log(restarauntsList);
     injectHTML(restarauntsList)
   })
