@@ -79,6 +79,7 @@ async function mainEvent() { // the async keyword means we can make API requests
 
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
+    loadAnimation.style.display = 'none';
 
     /*
       This array initially contains all 1,000 records from your request,
