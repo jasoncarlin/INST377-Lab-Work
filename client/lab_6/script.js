@@ -86,6 +86,7 @@ async function mainEvent() { // the async keyword means we can make API requests
     const newList = filterList(currentList, formProps.resto)
 
     console.log(newList);
+    injectHTML(newList);
   })
   /*
     Now that you HAVE a list loaded, write an event listener set to your filter button
