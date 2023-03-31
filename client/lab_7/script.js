@@ -86,8 +86,7 @@ async function mainEvent() {
     if (storedList.length > 0) {
       generateListButton.classList.remove("hidden");
     }
-    loadAnimation.style.display = "none";
-    generateListButton.classList.add("hidden");
+    
 
     /*
         This array initially contains all 1,000 records from your request,
