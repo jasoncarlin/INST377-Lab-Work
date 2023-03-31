@@ -53,7 +53,7 @@ async function mainEvent() {
 
   const loadAnimation = document.querySelector("#data_load_animation");
   loadAnimation.style.display = "none";
-
+  generateListButton.classList.add("hidden");
   let storedList = [];
 
   let currentList = []; // this is "scoped" to the main event function
@@ -86,6 +86,7 @@ async function mainEvent() {
     if (storedList.length > 0) {
       generateListButton.classList.remove("hidden");
     }
+    loadAnimation.style.display = "none";
     
 
     /*
