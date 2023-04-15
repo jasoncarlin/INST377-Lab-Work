@@ -49,8 +49,6 @@ async function mainEvent() {
     generateListButton.classList.remove("hidden");
   }
 
-  let storedList = [];
-
   let currentList = []; // this is "scoped" to the main event function
 
   loadButton.addEventListener("click", async (submitEvent) => {
@@ -84,7 +82,7 @@ async function mainEvent() {
 
   generateListButton.addEventListener("click", (event) => {
     console.log("generate new list");
-    currentList = cutRestaurantList(storedList);
+    currentList = cutRestaurantList(parsedData);
     console.log(currentList);
     injectHTML(currentList);
   });
