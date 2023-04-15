@@ -43,6 +43,13 @@ function initmap() {
 function markerPlace(array, map) {
   array.forEach((item) => {
     console.log('markerPlace', item);
+
+    map.eachLayer((layer) => {
+      if (layer instanceof L.Marker) {
+        layer.remove();
+      }
+    });
+
     const {coordinates} = item.geocoded_column_1
 
     L.marker([coordinates[1], coordinates[0]]).addTo(map);
@@ -53,6 +60,7 @@ async function mainEvent() {
   // the async keyword means we can make API requests
   const mainForm = document.querySelector(".main_form"); // This class name needs to be set on your form before you can listen for an event on it
   const loadButton = document.querySelector("#data_load");
+  const clearButton = document.querySelector("#data_clear");
   const generateListButton = document.querySelector("#generate");
   const textField = document.querySelector("#resto");
 
@@ -63,8 +71,8 @@ async function mainEvent() {
   const carto = initmap();
 
   const storedData = localStorage.getItem("storedData");
-  const parsedData = JSON.parse(storedData);
-  if (parsedData.length > 0) {
+  let parsedData = JSON.parse(storedData);
+  if (parsedData?.length > 0) {
     generateListButton.classList.remove("hidden");
   }
 
@@ -80,6 +88,12 @@ async function mainEvent() {
 
     const storedList = await results.json();
     localStorage.setItem("storedData", JSON.stringify(storedList));
+    parsedData = storedList;
+
+    if (parsedData?.length > 0) {
+      generateListButton.classList.remove("hidden");
+    }
+
     loadAnimation.style.display = "none";
 
     console.table(currentList);
@@ -100,6 +114,12 @@ async function mainEvent() {
     injectHTML(newList);
     markerPlace(newList, carto);
   });
+
+  clearButton.addEventListener("click", (event) => {
+    console.log('clear browser data');
+    localStorage.clear();
+    console.log ('localStorage Check', localStorage.getItem("storedData"));
+  }) 
 }
 
 document.addEventListener("DOMContentLoaded", async () => mainEvent()); // the async keyword means we can make API requests
