@@ -1,28 +1,26 @@
-<!--
-    This is how to build the CSS-only load animation from loading.io    
-    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-
-    This is helpful for showing your client-side users when data is loading,
-    since there's otherwise no sign your app is thinking about something!
-
-    Try placing it at the same level in your element tree as your Submit button
--->
-<!-- Bring in your successful HTML/CSS from the Flexbox lab -->
-<!-- Your page will need a form in it, but that form will not need an action
-    You will need to add the attribute "name" to your input
-    with a value of 'resto'
-
-    You will need to hook your script.js to this file for the midterm to work
-    you will need a "filter" button with a type of "button" and a
-    "load data" button with a type of "submit" on it
--->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jason Carlin's Labs for INST377</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+
   </head>
   <body>
     <div class="wrapper">
@@ -34,20 +32,26 @@
             action="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"
             class="box main_form"
           >
-          <button type="button" id="data_load">Load County Data</button>
+            <button type="button" id="data_load">Load County Data</button>
             <div>
               <label for="resto">Filter by Restaurant Name</label>
-              <input type="text" id="resto" name="resto"/>
+              <input type="text" id="resto" name="resto" />
             </div>
             <button type="button" id="generate">Generate List</button>
           </form>
         </div>
         <div class="right_section box">
           <h2>Local Restaurants</h2>
+          <div id="map" class="box"></div>
           <ol class="box" id="restaurant_list">
             A list of local restaurants
-          </ol>            
-          <div class="lds-ellipsis" id="data_load_animation"><div></div><div></div><div></div><div></div></div>
+          </ol>
+          <div class="lds-ellipsis" id="data_load_animation">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -62,4 +66,3 @@
     <script src="./script.js"></script>
   </body>
 </html>
-
